@@ -1,0 +1,15 @@
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.DAL.dll.config
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.DAL.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.DAL.pdb
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.Entity.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\EntityFramework.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.Entity.pdb
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\CRM.Entity.dll.config
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\EntityFramework.xml
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\obj\Release\CRM.DAL.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\obj\Release\CRM.DAL.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\obj\Release\CRM.DAL.csproj.CopyComplete
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\obj\Release\CRM.DAL.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.DAL\obj\Release\CRM.DAL.pdb
