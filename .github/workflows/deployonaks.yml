@@ -2,7 +2,7 @@ on: [push]
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  REGISTRY_NAME: {appcrmctnr}
+  REGISTRY_NAME: {appcrmctnr.azurecr.io}
   CLUSTER_NAME: {appclstr}
   CLUSTER_RESOURCE_GROUP: {Wp-RG}
   NAMESPACE: {namespace-name}
