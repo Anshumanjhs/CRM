@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "crmclstr-0d4c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "crmclstr-0d4c"
+  template:
+    metadata:
+      labels:
+        app: "crmclstr-0d4c"
+    spec:
+      containers:
+        - name: "crmclstr-0d4c"
+          image: "appcrmctnr.azurecr.io/crmclstr"
+          ports:
+          - containerPort: 80
