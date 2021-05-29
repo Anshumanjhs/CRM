@@ -18,7 +18,8 @@
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
-    <NameOfLastUsedPublishProfile>CRMdotnet - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>CRMWEBUI20210528230701</NameOfLastUsedPublishProfile>
+    <ActiveDebugTarget>ContainerToolsProjectDebugExtension</ActiveDebugTarget>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

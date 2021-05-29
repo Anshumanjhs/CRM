@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/migrationapp9517",
+      "type": "secrets.keyVault",
+      "connectionId": "VaultUri",
+      "secretStore": null
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/crmappdb/databases/CRM",
+      "type": "mssql.azure",
+      "connectionId": "crmconnectionstring",
+      "secretStore": "AzureKeyVault"
+    }
+  }
+}

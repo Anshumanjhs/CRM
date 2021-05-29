@@ -184,3 +184,11 @@ C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\obj\Debug\CRM.WEBUI.csproj.CoreCompile
 C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\obj\Debug\CRM.WEBUI.csproj.CopyComplete
 C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\obj\Debug\CRM.WEBUI.dll
 C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\obj\Debug\CRM.WEBUI.pdb
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Azure.KeyVault.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Azure.KeyVault.WebKey.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Azure.KeyVault.xml
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Azure.KeyVault.WebKey.xml
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI\bin\Microsoft.Rest.ClientRuntime.Azure.xml
