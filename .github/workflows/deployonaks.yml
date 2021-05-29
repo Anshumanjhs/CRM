@@ -1,13 +1,7 @@
 on: [push]
 
 # Environment variables available to all jobs and steps in this workflow
-env:
-  REGISTRY_NAME: {appcrmctnr.azurecr.io}
-  CLUSTER_NAME: {appclstr}
-  CLUSTER_RESOURCE_GROUP: {Wp-RG}
-  NAMESPACE: {namespace-name}
-  SECRET: {crm}
-  APP_NAME: {crmapp}
+
   
 jobs:
   build:
@@ -18,21 +12,21 @@ jobs:
     # Connect to Azure Container Registry (ACR)
     - uses: azure/docker-login@v1
       with:
-        login-server: ${{ env.REGISTRY_NAME }}.azurecr.io
+        login-server: appcrmctnr.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }} 
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     # Container build and push to a Azure Container Registry (ACR)
     - run: |
-        docker build . -t ${{ env.REGISTRY_NAME }}/${{ env.APP_NAME }}:${{ github.sha }}
-        docker push ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+        docker build . -t appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
+        docker push appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
     
     # Set the target Azure Kubernetes Service (AKS) cluster. 
     - uses: azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: ${{ env.CLUSTER_NAME }}
-        resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+        cluster-name: appclstr
+        resource-group: Wp-RG
     
     # Create namespace if doesn't exist
     - run: |
@@ -41,11 +35,11 @@ jobs:
     # Create image pull secret for ACR
     - uses: azure/k8s-create-secret@v1
       with:
-        container-registry-url: ${{ env.REGISTRY_NAME }}.azurecr.io
+        container-registry-url: appcrmctnr.azurecr.io
         container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        secret-name: ${{ env.SECRET }}
-        namespace: ${{ env.NAMESPACE }}
+        secret-name: crm
+        namespace: namespace-name
         force: true
     
     # Deploy app to AKS
@@ -55,10 +49,10 @@ jobs:
           manifests/deployment.yml
           manifests/service.yml
         images: |
-          ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
+          appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
         imagepullsecrets: |
-          ${{ env.SECRET }}
-        namespace: ${{ env.NAMESPACE }}
+          crm
+        namespace: namespace-name
 
 
 
