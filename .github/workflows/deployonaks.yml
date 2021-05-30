@@ -18,7 +18,8 @@ jobs:
     
     # Container build and push to a Azure Container Registry (ACR)
     - run: |
-       docker build . -t appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
+       #docker build . -t appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
+       docker build https://github.com/Anshumanjhs/CRM#master:CRMWEBUI
        docker push appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
     
     # Set the target Azure Kubernetes Service (AKS) cluster. 
