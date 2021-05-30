@@ -22,7 +22,7 @@ jobs:
        #docker build https://github.com/Anshumanjhs/CRM#master:CRMWEBUI
        #docker build https://github.com/Anshumanjhs/CRM.git#master:CRMWEBUI
        docker build "$GITHUB_WORKSPACE/CRM.WEBUI" -f  "CRM.WEBUI/Dockerfile" -t appcrmctnr.azurecr.io/appclstr:${{ github.sha }} --label dockerfile-path=CRM.WEBUI/Dockerfile
-       docker push appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
+       #docker push appcrmctnr.azurecr.io/crmapp:${{ github.sha }}
     
     # Set the target Azure Kubernetes Service (AKS) cluster. 
     - uses: azure/aks-set-context@v1
