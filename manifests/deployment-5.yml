@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "appclstr-f030"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "appclstr-f030"
+  template:
+    metadata:
+      labels:
+        app: "appclstr-f030"
+    spec:
+      containers:
+        - name: "appclstr-f030"
+          image: "appcrmctnr.azurecr.io/appclstr"
+          ports:
+          - containerPort: 80
