@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.BLL", "CRM.BLL\CRM.BLL.csproj", "{FC67651A-5130-44F0-9BF9-D9682FDF1AFE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.WEBUI", "CRM.WEBUI\CRM.WEBUI.csproj", "{07FF7774-750F-4AC1-97AE-04F48EEB985C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Entity", "CRM.Entity\CRM.Entity.csproj", "{4A832F40-BB5D-45BC-917B-C4FD5E39393E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5D21D96E-AA8A-4033-9CA4-61C95DA29F94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4A832F40-BB5D-45BC-917B-C4FD5E39393E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A832F40-BB5D-45BC-917B-C4FD5E39393E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A832F40-BB5D-45BC-917B-C4FD5E39393E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D21D96E-AA8A-4033-9CA4-61C95DA29F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D21D96E-AA8A-4033-9CA4-61C95DA29F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D21D96E-AA8A-4033-9CA4-61C95DA29F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D21D96E-AA8A-4033-9CA4-61C95DA29F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

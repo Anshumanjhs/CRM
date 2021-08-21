@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  crm.webui:
+    image: ${DOCKER_REGISTRY-}crmwebui
+    build:
+      context: .\CRM.WEBUI
+      dockerfile: Dockerfile

@@ -29,6 +29,7 @@
     </NuGetPackageImportStamp>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,6 +173,7 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <None Include="Dockerfile_windows" />
     <None Include="Dockerfilebkp" />
     <None Include="Properties\PublishProfiles\appcrmctnr.pubxml" />
     <None Include="Properties\PublishProfiles\crmapptest - Web Deploy.pubxml" />
@@ -181,6 +183,8 @@
     <None Include="Properties\PublishProfiles\CRMWEBUI20210607134330.pubxml" />
     <None Include="Properties\PublishProfiles\CRMWEBUI20210818111841 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CRMWEBUI20210818121707 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CRMWEBUI20210821173220.pubxml" />
+    <None Include="Properties\PublishProfiles\CRMWEBUI20210821181422.pubxml" />
     <None Include="Properties\PublishProfiles\CRMWEBUITest - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\registry.hub.docker.com_anshumanjhs.pubxml" />
     <None Include="Properties\PublishProfiles\registry.hub.docker.com_bhagwatdocker.pubxml" />

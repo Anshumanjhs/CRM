@@ -1,0 +1,9 @@
+services:
+  crm.webui:
+    build:
+      context: C:\Users\DELL\Desktop\Azure\CRM\CRM.WEBUI
+      dockerfile: Dockerfile
+    image: crmwebui
+    ports:
+    - target: 80
+version: '3.4'
