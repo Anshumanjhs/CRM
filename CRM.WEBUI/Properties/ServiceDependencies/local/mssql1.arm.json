@@ -51,7 +51,7 @@
             {
               "kind": "v12.0",
               "location": "[parameters('resourceLocation')]",
-              "name": "crmappdb",
+              "name": "crmsrvr",
               "type": "Microsoft.Sql/servers",
               "apiVersion": "2017-10-01-preview"
             },
@@ -64,11 +64,11 @@
               },
               "kind": "v12.0,user,vcore",
               "location": "[parameters('resourceLocation')]",
-              "name": "crmappdb/CRM",
+              "name": "crmsrvr/CRM",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
-                "crmappdb"
+                "crmsrvr"
               ]
             }
           ]

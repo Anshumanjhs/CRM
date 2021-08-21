@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DataContext-Web.config Connection String" description="DataContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:crmappdb.database.windows.net,1433;Initial Catalog=CRM;User Id=crmadmin@crmappdb;Password=crm@123@admin;App=EntityFramework" tags="SqlConnectionString">
+  <parameter name="DataContext-Web.config Connection String" description="DataContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:crmsrvr.database.windows.net,1433;Initial Catalog=CRM;User Id=crmsrvr@crmsrvr;Password=Crm@12345;App=EntityFramework" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\DELL\\Desktop\\Azure\\CRM\\CRM\.WEBUI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext']/@connectionString" />
   </parameter>
 </parameters>

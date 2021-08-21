@@ -6,10 +6,13 @@
       "connectionId": "VaultUri",
       "secretStore": null
     },
+    "secrets2": {
+      "type": "secrets.user"
+    },
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/crmappdb/databases/CRM",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/crmsrvr/databases/CRM",
       "type": "mssql.azure",
-      "connectionId": "crmconnectionstring",
+      "connectionId": "crmcnstr",
       "secretStore": "AzureKeyVault"
     }
   }
