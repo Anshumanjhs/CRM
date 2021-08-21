@@ -1,0 +1,50 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: crmwebui20210821173220.azurecr.io
+        username: ${{ secrets.acr_crmwebui20210821173220_username }}
+        password: ${{ secrets.acr_crmwebui20210821173220_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/CRM.WEBUI" -f  "CRM.WEBUI/Dockerfile" -t crmwebui20210821173220.azurecr.io/kbctl:${{ github.sha }} --label dockerfile-path=CRM.WEBUI/Dockerfile
+        docker push crmwebui20210821173220.azurecr.io/kbctl:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_kbctl_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep kbctlb8ab | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace kbctlb8ab`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: kbctlb8ab
+        container-registry-url: crmwebui20210821173220.azurecr.io
+        container-registry-username: ${{ secrets.acr_crmwebui20210821173220_username }}
+        container-registry-password: ${{ secrets.acr_crmwebui20210821173220_password }}
+        secret-name: kbctldockerauth
+       
+    - uses: azure/k8s-deploy@v1.2
+      with:
+        namespace: kbctlb8ab
+        manifests: |
+          manifests/deployment-6.yml
+          manifests/service-6.yml
+        images: |
+          crmwebui20210821173220.azurecr.io/kbctl:${{ github.sha }}
+        imagepullsecrets: |
+          kbctldockerauth
