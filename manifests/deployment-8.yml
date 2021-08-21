@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kbctl-19c7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kbctl-19c7"
+  template:
+    metadata:
+      labels:
+        app: "kbctl-19c7"
+    spec:
+      containers:
+        - name: "kbctl-19c7"
+          image: "crmwebui20210821173220.azurecr.io/kbctl"
+          ports:
+          - containerPort: 80
