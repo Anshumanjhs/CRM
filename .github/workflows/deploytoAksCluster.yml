@@ -1,0 +1,50 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: appcrmctnr.azurecr.io
+        username: ${{ secrets.acr_appcrmctnr_username }}
+        password: ${{ secrets.acr_appcrmctnr_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/https://github.com/Anshumanjhs/CRM/tree/master/CRM.WEBUI" -f  "https://github.com/Anshumanjhs/CRM/tree/master/CRM.WEBUI/Dockerfile" -t appcrmctnr.azurecr.io/appcrmclstr:${{ github.sha }} --label dockerfile-path=https://github.com/Anshumanjhs/CRM/tree/master/CRM.WEBUI/Dockerfile
+        docker push appcrmctnr.azurecr.io/appcrmclstr:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_appcrmclstr_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep appcrmclstra9bc | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace appcrmclstra9bc`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: appcrmclstra9bc
+        container-registry-url: appcrmctnr.azurecr.io
+        container-registry-username: ${{ secrets.acr_appcrmctnr_username }}
+        container-registry-password: ${{ secrets.acr_appcrmctnr_password }}
+        secret-name: appcrmclstrdockerauth
+       
+    - uses: azure/k8s-deploy@v1.2
+      with:
+        namespace: appcrmclstra9bc
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          appcrmctnr.azurecr.io/appcrmclstr:${{ github.sha }}
+        imagepullsecrets: |
+          appcrmclstrdockerauth

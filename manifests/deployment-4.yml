@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "appclstr-c58d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "appclstr-c58d"
+  template:
+    metadata:
+      labels:
+        app: "appclstr-c58d"
+    spec:
+      containers:
+        - name: "appclstr-c58d"
+          image: "appcrmctnr.azurecr.io/appclstr"
+          ports:
+          - containerPort: 80
